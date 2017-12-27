@@ -8,7 +8,8 @@
 cd isit
 go build isit
 ```
-## `available`
+
+## Command-line Options
 
 The `available` command-line flag simply checks if the given domain(s) are available.
 
@@ -18,8 +19,6 @@ false		google.com
 true		g000000000000000gle.com
 ```
 
-## `registered`
-
 The `registered` command-line flag simply checks if the given domain(s) have been registered.
 
 ```shell
@@ -27,8 +26,6 @@ $ isit registered google.com g000000000000000gle.com
 true		google.com
 false		g000000000000000gle.com
 ```
-
-## `resolvable`
 
 The `resolvable` command-line flag simply checks if the given domain(s) are resolvable (to an IP address).
 
