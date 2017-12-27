@@ -1,11 +1,11 @@
 # isit
 > The domain availability command-line uitlity.
 
-The command-line application helps with domain availability discovery which can be helpful for a variety of different things. It provides three methods of lookup which all work concurrently.
+This command-line application helps in domain name availability discovery with three different concurrent lookup methods.
 
 ## Build from Source
 
-Until I've figured out a better option:
+Until I've figured out a better solution:
 
 ```shell
 git clone https://github.com/picatz/isit.git
