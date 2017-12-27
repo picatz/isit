@@ -1,12 +1,14 @@
 # isit
 > The domain availability command-line uitlity.
 
-## Build Source
+## Build from Source
+
+Until I've figured out a better option:
 
 ```shell
-# git clone this repo
+git clone https://github.com/picatz/isit.git
 cd isit
-go build isit
+go build isit.go
 ```
 
 ## Command-line Options
@@ -37,7 +39,7 @@ false		g000000000000000gle.com
 
 ## Help Menu
 
-```shell
+```
 NAME:
    isit - domain availability command-line utility
 
