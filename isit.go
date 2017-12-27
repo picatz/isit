@@ -12,13 +12,16 @@ import (
 )
 
 /*
-	Talking directory to whois can be interesting,
+	Talking directly to whois can be interesting,
 	but why not just "proxy" the requests through
-	a (hopefully) trust worthy source.
+	a (hopefully) trust worthy source?
+
+	One of the possible benefits of doing this could be
+	to help circumvent whois rate-limiting.
 
 	Note: in the future I would like to support different
 	whois backends -- via directly making a traditional whois
-	query, or through other sources the whois.com with command-line
+	query, or through other sources like the whois.com with command-line
 	flags to be able to change up or just compare your findings with
 	other sources.
 */
