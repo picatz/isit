@@ -1,6 +1,8 @@
 # isit
 > The domain availability command-line uitlity.
 
+The command-line application helps with domain availability discovery which can be helpful for a variety of different things. It provides three methods of lookup which all work concurrently.
+
 ## Build from Source
 
 Until I've figured out a better option:
