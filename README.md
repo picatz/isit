@@ -8,6 +8,7 @@ This command-line application helps in domain name availability discovery with t
 Until I've figured out a better solution:
 
 ```shell
+go get github.com/urfave/cli
 git clone https://github.com/picatz/isit.git
 cd isit
 go build isit.go
