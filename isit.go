@@ -26,6 +26,7 @@ import (
 	other sources.
 */
 const WhoisDotComLink = "https://www.whois.com/whois/"
+const IsUpDotMeLink = "http://downforeveryoneorjustme.com/"
 
 /*
 	To help avoid some common problems when working directly with
@@ -59,6 +60,20 @@ func IsRegistered(domain string) bool {
 	defer resp.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(resp.Body)
 	if strings.Contains(string(bodyBytes), "Registrar") {
+		return true
+	}
+	return false
+}
+
+// Check if a given domain is up or not
+func IsUp(domain string) bool {
+	resp, err := netClient.Get(IsUpDotMeLink + domain)
+	if err != nil {
+		return false
+	}
+	defer resp.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(resp.Body)
+	if strings.Contains(string(bodyBytes), "is up") {
 		return true
 	}
 	return false
@@ -161,6 +176,30 @@ func main() {
 						go func(c *cli.Context, index int) {
 							domain := c.Args().Get(index)
 							results <- Result{domain: domain, value: IsResolvable(domain)}
+						}(c, i)
+					}
+					for i := 0; i < argumentCount; i++ {
+						result := <-results
+						fmt.Println(result.value, "\t", result.domain)
+					}
+				} else {
+					noArgumentGiven()
+				}
+				return nil
+			},
+		},
+		{
+			Name:    "up",
+			Aliases: []string{"u"},
+			Usage:   "check if the given domain(s) are up",
+			Action: func(c *cli.Context) error {
+				results := make(chan Result)
+				argumentCount := len(c.Args())
+				if argumentCount > 0 {
+					for i := 0; i < argumentCount; i++ {
+						go func(c *cli.Context, index int) {
+							domain := c.Args().Get(index)
+							results <- Result{domain: domain, value: IsUp(domain)}
 						}(c, i)
 					}
 					for i := 0; i < argumentCount; i++ {
