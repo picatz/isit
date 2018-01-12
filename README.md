@@ -40,6 +40,14 @@ true		google.com
 false		g000000000000000gle.com
 ```
 
+The `up` command-line flag simply checks if the given domain(s) are up or not.
+
+```shell
+$ isit up google.com g000000000000000gle.com
+true		google.com
+false		g000000000000000gle.com
+```
+
 ## Help Menu
 
 ```
@@ -56,6 +64,7 @@ COMMANDS:
      available, a   check if the given domain(s) are available
      registered, r  check if the given domain(s) are registered
      resolvable, R  check if the given domain(s) are resolvable
+     up, u          check if the given domain(s) are up
      help, h        Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
