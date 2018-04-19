@@ -3,15 +3,21 @@
 
 This command-line application helps in domain name availability discovery with three different concurrent lookup methods.
 
+## Install
+
+```
+$ go get github.com/picatz/isit
+```
+
 ## Build from Source
 
 Until I've figured out a better solution:
 
 ```shell
-go get github.com/urfave/cli
-git clone https://github.com/picatz/isit.git
-cd isit
-go build isit.go
+$ go get github.com/urfave/cli
+$ git clone https://github.com/picatz/isit.git
+$ cd isit
+$ go build isit.go
 ```
 
 ## Command-line Options
